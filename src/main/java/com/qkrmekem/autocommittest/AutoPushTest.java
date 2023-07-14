@@ -1,5 +1,6 @@
 package com.qkrmekem.autocommittest;
 
+import com.qkrmekem.autocommittest.component.UserTest;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.PushCommand;
 import org.eclipse.jgit.api.RemoteAddCommand;
@@ -7,9 +8,6 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.TransportException;
 import org.eclipse.jgit.transport.URIish;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -20,7 +18,9 @@ public class AutoPushTest {
 
     public static void main(String[] args) throws IOException, GitAPIException {
 
-        try (Git git = Git.open(new File("C:\\Users\\10\\Desktop\\algorithm\\auto-commit"))) {
+        UserTest userTest = new UserTest();
+
+        try (Git git = Git.open(new File("D:\\auto-commit-test"))) {
             // Add your logic here ...
             RemoteAddCommand remoteAddCommand = git.remoteAdd();
             remoteAddCommand.setName("origin");
@@ -39,7 +39,7 @@ public class AutoPushTest {
 
             // push to remote:
             PushCommand pushCommand = git.push();
-            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider("qkrmekem", "pem89als@@"));
+            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername(), userTest.getPassword()));
             // you can add more settings here if needed
             pushCommand.call();
 
