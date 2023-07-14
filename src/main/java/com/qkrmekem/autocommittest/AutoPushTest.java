@@ -19,7 +19,6 @@ public class AutoPushTest {
     public static void main(String[] args) throws IOException, GitAPIException {
 
         UserTest userTest = new UserTest();
-        String encodedPassword = URLEncoder.encode(userTest.getPassword(), "UTF-8");
 
         try (Git git = Git.open(new File("D:\\auto-commit-test"))) {
             // Add your logic here ...
@@ -40,7 +39,8 @@ public class AutoPushTest {
 
             // push to remote:
             PushCommand pushCommand = git.push();
-            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername(), encodedPassword));
+            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), userTest.getPassword().toString()));
+//            OAuth2CredentialsProvider credentialsProvider = new OAuth2CredentialsProvider(accessToken);
             // you can add more settings here if needed
             pushCommand.call();
 
