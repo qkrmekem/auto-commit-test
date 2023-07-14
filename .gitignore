@@ -35,4 +35,4 @@ build/
 ### properties
 *.properties
 
-UserTest.java
+src/main/java/com/qkrmekem/autocommittest/component/UserTest.java
