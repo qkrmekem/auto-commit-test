@@ -20,6 +20,7 @@ public class AutoPushTest {
 
         UserTest userTest = new UserTest();
         System.out.println("userTest.getUsername() = " + userTest.getUsername());
+        System.out.println("userTest.getPassword() = " + userTest.getPassword());
 
         try (Git git = Git.open(new File("D:\\auto-commit-test"))) {
             // Add your logic here ...
