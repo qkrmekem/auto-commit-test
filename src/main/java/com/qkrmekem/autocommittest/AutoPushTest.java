@@ -19,6 +19,7 @@ public class AutoPushTest {
     public static void main(String[] args) throws IOException, GitAPIException {
 
         UserTest userTest = new UserTest();
+        System.out.println("userTest.getUsername() = " + userTest.getUsername());
 
         try (Git git = Git.open(new File("D:\\auto-commit-test"))) {
             // Add your logic here ...
