@@ -26,7 +26,7 @@ public class AutoPushTest {
             remoteAddCommand.setName("origin");
             try {
                 remoteAddCommand.setUri(new
-                        URIish("https://github.com/qkrmekem/auto-commit.git"));
+                        URIish("https://github.com/qkrmekem/auto-commit-test.git"));
                 System.out.println("file Added");
             } catch (URISyntaxException e) {
                 e.printStackTrace();
