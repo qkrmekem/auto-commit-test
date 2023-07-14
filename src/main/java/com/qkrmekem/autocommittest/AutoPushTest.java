@@ -35,7 +35,7 @@ public class AutoPushTest {
             git.add().addFilepattern(".").call();
             // you can add more settings here if needed
             remoteAddCommand.call();
-            git.commit().setMessage( "commited" ).call();
+            git.commit().setMessage( "auto-commit" ).call();
 
             // push to remote:
             PushCommand pushCommand = git.push();
