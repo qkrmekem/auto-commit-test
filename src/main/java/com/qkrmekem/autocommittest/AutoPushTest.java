@@ -36,6 +36,7 @@ public class AutoPushTest {
             // you can add more settings here if needed
             remoteAddCommand.call();
             git.commit().setMessage( "auto-commit" ).call();
+            System.out.println("여기까지 됨");
 
             // push to remote:
             PushCommand pushCommand = git.push();
