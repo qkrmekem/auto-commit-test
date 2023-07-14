@@ -35,4 +35,5 @@ build/
 ### properties
 *.properties
 
+### never commit to github!!!!!!
 src/main/java/com/qkrmekem/autocommittest/component/UserTest.java
