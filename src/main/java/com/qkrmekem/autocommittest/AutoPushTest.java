@@ -49,7 +49,7 @@ public class AutoPushTest {
             try {
                 System.out.println("여기까지 됨");
                 git.push()
-                        .setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), userTest.getPassword().toString()))
+                        .setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername(), userTest.getPassword()))
                         .setRemote("origin").add("main").call();
             } catch (TransportException e) {
                 // Add your own logic here, for example:
