@@ -38,8 +38,8 @@ public class AutoPushTest {
             git.commit().setMessage( "auto-commit" ).call();
 
             // push to remote:
-            PushCommand pushCommand = git.push();
-            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), userTest.getPassword().toString()));
+//            PushCommand pushCommand = git.push();
+//            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), userTest.getPassword().toString()));
 //            OAuth2CredentialsProvider credentialsProvider = new OAuth2CredentialsProvider(accessToken);
             // you can add more settings here if needed
 //            pushCommand.call();
