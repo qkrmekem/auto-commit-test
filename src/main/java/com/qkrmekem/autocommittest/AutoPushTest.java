@@ -46,7 +46,9 @@ public class AutoPushTest {
 
             try {
                 System.out.println("여기까지 됨");
-                git.push().setRemote("origin").add("main").call();
+                git.push()
+                        .setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), userTest.getPassword().toString()))
+                        .setRemote("origin").add("main").call();
             } catch (TransportException e) {
                 // Add your own logic here, for example:
 //                System.out.println("Username or password incorrect.");
