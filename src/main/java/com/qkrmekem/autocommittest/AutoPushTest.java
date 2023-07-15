@@ -20,6 +20,8 @@ public class AutoPushTest {
 
         UserTest userTest = new UserTest();
 
+        String encodedPassword = URLEncoder.encode(userTest.getPassword(), "UTF-8");
+
         try (Git git = Git.open(new File("D:\\auto-commit-test"))) {
             // Add your logic here ...
             RemoteAddCommand remoteAddCommand = git.remoteAdd();
@@ -47,7 +49,7 @@ public class AutoPushTest {
             try {
                 System.out.println("여기까지 됨");
                 git.push()
-                        .setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), userTest.getPassword().toString()))
+                        .setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), encodedPassword.toString()))
                         .setRemote("origin").add("main").call();
             } catch (TransportException e) {
                 // Add your own logic here, for example:
