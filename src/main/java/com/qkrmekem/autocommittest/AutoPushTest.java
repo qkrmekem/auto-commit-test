@@ -52,7 +52,7 @@ public class AutoPushTest {
             } catch (TransportException e) {
                 // Add your own logic here, for example:
 //                System.out.println("Username or password incorrect.");
-                System.out.println(e.getCause());
+                System.out.println(e.toString());
             }
 
         }
