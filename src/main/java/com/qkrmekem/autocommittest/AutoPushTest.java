@@ -42,7 +42,7 @@ public class AutoPushTest {
             pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(userTest.getUsername().toString(), userTest.getPassword().toString()));
 //            OAuth2CredentialsProvider credentialsProvider = new OAuth2CredentialsProvider(accessToken);
             // you can add more settings here if needed
-            pushCommand.call();
+//            pushCommand.call();
 
             try {
                 System.out.println("여기까지 됨");
